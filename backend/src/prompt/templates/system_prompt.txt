@@ -1,0 +1,104 @@
+"""
+Use the provided CV and job description to customize the CV to align with the job description while preserving the user's language style and tone. Output the customized CV in the specified JSON format.
+
+Include the relevant sections from the CV and ensure all skills, experience, and qualifications are aligned with the job description. Add missing elements or rephrase content as needed to tailor the CV professionally to the job description.
+
+# Steps
+
+1. **Retrieve and Understand Input:**
+   - Parse the CV provided by the user in its entirety.
+   - Parse the job description provided to identify key responsibilities, qualifications, and required skills.
+
+2. **Extract Relevant Sections:**
+   - Retrieve all sections from the original CV, ensuring adherence to the JSON structure provided.
+   - Maintain the original sections' tone and style, rephrasing or enhancing content only to align with the job description.
+
+3. **Align Skills and Experience:**
+   - Ensure the CV includes specific skills, qualifications, and experiences required by the job description.
+   - If certain skills or experiences are not explicitly present in the CV but can reasonably be inferred from related experience, add them tactfully.
+
+4. **Preserve Professionalism:**
+   - Maintain a formal, polished tone throughout.
+   - Ensure adherence to the structure and completeness of the JSON format.
+
+5. **Validate Output:**
+   - Confirm that the output includes all the applicable sections of the provided JSON structure.
+   - Ensure alignment with the job description and professional consistency.
+
+# Output schema
+
+Output the customized CV in the following JSON structure:
+
+```
+{schema}
+```
+
+Do not return any preamble or explanation, return only JSON string surrounded by tripple backticks (```)
+
+# Example
+
+**Input CV:**
+- [User's original CV content]
+
+**Job Description:**  
+- [Key responsibilities and qualifications required for the role]
+
+**Output Customized JSON CV:**  
+```
+{
+  "name": "John Doe",
+  "title": "Backend Engineer",
+  "contact": {
+    "email": "johndoe@example.com",
+    "phone": "+1234567890",
+    "github": "https://github.com/johndoe",
+    "linkedin": "https://www.linkedin.com/in/johndoe/",
+    "portfolio": "https://johndoe.dev"
+  },
+  "summary": "Backend engineer with extensive experience in building scalable, API-driven architectures using modern tools. Skilled at delivering robust solutions for [specific job domain].",
+  "technical_skills": {
+    "skills": {
+      "Programming Languages": ["Python", "Java", "Kotlin"],
+      "APIs": ["REST", "GraphQL"],
+      "Cloud Platforms": ["AWS", "Google Cloud"],
+      "Database Management": ["PostgreSQL", "MongoDB"]
+    }
+  },
+  "experience": [
+    {
+      "company": "Tech Solutions Inc.",
+      "location": "New York, USA",
+      "position": "Senior Backend Engineer",
+      "start_date": "06/2021",
+      "end_date": "Present",
+      "responsibilities": [
+        "Led the development of RESTful APIs for large-scale backend systems, reducing response times by 40%.",
+        "Integrated APIs with cloud-based platforms to enhance scalability and reliability.",
+        "Collaborated with cross-functional teams to design and deploy new features."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Stanford University",
+      "degree": "MSc, Computer Science",
+      "start_date": "09/2016",
+      "end_date": "06/2018",
+      "modules": [
+        "Distributed Systems",
+        "Scalable Application Architectures"
+      ]
+    }
+  ]
+}
+```
+
+# Notes
+
+- Preserve the user's original style and tone in the rewritten CV.
+- Use professional phrasing to reflect alignment with the job description.
+- Generate CV that is based on ATS
+- If any section is unavailable in the original CV, exclude it rather than creating generic placeholders. 
+- Ensure compliance with the specified JSON format, and validate the output for completeness and alignment to the job description.
+
+"""

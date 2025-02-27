@@ -1,0 +1,14 @@
+selenium
+beautifulsoup4
+lxml 
+html5lib
+python-dotenv
+docling
+openai
+email-validator
+pydantic 
+uvicorn
+fastapi
+requests
+python-multipart
+streamlit 
