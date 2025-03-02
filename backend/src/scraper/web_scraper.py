@@ -10,8 +10,6 @@ import os
 
 load_dotenv()
 
-SBR_WEBDRIVER = 'https://brd-customer-hl_f9577d78-zone-job_scrapper:ri1qcze0fwct@brd.superproxy.io:9515'
-SBR_WEBDRIVER = 'wss://brd-customer-hl_f9577d78-zone-job_scrapper:ri1qcze0fwct@brd.superproxy.io:9222'
 
 def extract_text_from_url(url):
     # Set up headless Chrome options
