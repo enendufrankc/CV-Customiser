@@ -156,7 +156,7 @@ function App() {
           {/* Right Panel - Preview */}
           <div className="bg-[#1f2937]/90 backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-700 flex flex-col items-center justify-center min-h-[500px]">
             {resumeData ? (
-              <div className="w-full space-y-6">
+              <div className="w-full space-y-6 overflow-y-auto max-h-[500px]">
                 <h2 className="text-2xl font-bold">{resumeData.name}</h2>
                 <p className="text-gray-400">{resumeData.title}</p>
 
@@ -170,6 +170,12 @@ function App() {
                     )}
                     {resumeData.contact.linkedin && (
                       <p>LinkedIn: {resumeData.contact.linkedin}</p>
+                    )}
+                    {resumeData.contact.portfolio && (
+                      <p>Portfolio: {resumeData.contact.portfolio}</p>
+                    )}
+                    {resumeData.contact.medium && (
+                      <p>Medium: {resumeData.contact.medium}</p>
                     )}
                   </div>
                 </div>
@@ -193,6 +199,53 @@ function App() {
                       )
                     )}
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Experience</h3>
+                  {resumeData.experience.map((exp, index) => (
+                    <div key={index} className="space-y-1">
+                      <p className="font-medium">{exp.position} at {exp.company}</p>
+                      <p className="text-sm text-gray-400">{exp.location}</p>
+                      <p className="text-sm text-gray-400">{exp.start_date} - {exp.end_date || 'Present'}</p>
+                      <ul className="list-disc list-inside text-sm text-gray-300">
+                        {exp.responsibilities.map((resp, idx) => (
+                          <li key={idx}>{resp}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Education</h3>
+                  {resumeData.education.map((edu, index) => (
+                    <div key={index} className="space-y-1">
+                      <p className="font-medium">{edu.degree} at {edu.institution}</p>
+                      <p className="text-sm text-gray-400">{edu.start_date} - {edu.end_date}</p>
+                      {edu.modules && (
+                        <ul className="list-disc list-inside text-sm text-gray-300">
+                          {edu.modules.map((module, idx) => (
+                            <li key={idx}>{module}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Personal Projects</h3>
+                  <p className="text-gray-300 text-sm">{resumeData.personal_projects.description}</p>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Soft Skills</h3>
+                  <ul className="list-disc list-inside text-sm text-gray-300">
+                    {resumeData.soft_skills.skills.map((skill, index) => (
+                      <li key={index}>{skill}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ) : (

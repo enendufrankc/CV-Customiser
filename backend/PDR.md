@@ -169,6 +169,7 @@ All documentation should be kept updated to reflect any changes in technology, l
 
 ## Current File Structure
 
+```bash
 .
 ├── README.md
 ├── LICENSE
@@ -220,4 +221,3 @@ All documentation should be kept updated to reflect any changes in technology, l
         └── utils
             ├── __init__.py
             └── common.py
-
